@@ -1,0 +1,87 @@
+/* Hero — editorial atmosphere & depth */
+
+.hero-section {
+  --hero-overlay-light: linear-gradient(
+    135deg,
+    rgba(245, 243, 255, 0.94) 0%,
+    rgba(255, 255, 255, 0.88) 42%,
+    rgba(237, 233, 254, 0.82) 100%
+  );
+  --hero-overlay-dark: linear-gradient(
+    135deg,
+    rgba(46, 16, 101, 0.92) 0%,
+    rgba(88, 28, 135, 0.86) 45%,
+    rgba(49, 46, 129, 0.9) 100%
+  );
+}
+
+.hero-bg-image {
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.hero-overlay {
+  background: var(--hero-overlay-light);
+}
+
+.dark .hero-section .hero-overlay {
+  background: var(--hero-overlay-dark);
+}
+
+.hero-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+}
+
+.dark .hero-section .hero-grain {
+  opacity: 0.06;
+}
+
+.hero-title-accent {
+  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 45%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dark .hero-section .hero-title-accent {
+  background: linear-gradient(135deg, #f5f3ff 0%, #e9d5ff 50%, #ddd6fe 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-stat-card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(124, 58, 237, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.dark .hero-section .hero-stat-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.hero-image-frame {
+  box-shadow:
+    0 25px 50px -12px rgba(76, 29, 149, 0.25),
+    0 0 0 1px rgba(124, 58, 237, 0.08);
+}
+
+.dark .hero-section .hero-image-frame {
+  box-shadow:
+    0 25px 60px -12px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.hero-float-badge {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  backdrop-filter: blur(16px);
+}
+
+.dark .hero-section .hero-float-badge {
+  background: rgba(15, 15, 15, 0.75);
+  border-color: rgba(255, 255, 255, 0.12);
+}

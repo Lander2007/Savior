@@ -1,0 +1,7 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+:root{--font-latin:"Inter",system-ui,sans-serif;--font-latin-serif:"Playfair Display",Georgia,serif;--font-arabic:"Cairo","Noto Sans Arabic",system-ui,sans-serif}
+html.font-latin{font-family:var(--font-latin)}
+html.font-latin .font-serif{font-family:var(--font-latin-serif)}
+html.font-arabic{font-family:var(--font-arabic);font-size:17px}
+html.font-arabic .font-serif{font-family:var(--font-arabic)}
+html.font-arabic h1,html.font-arabic h2,html.font-arabic h3{line-height:1.35}
