@@ -28,7 +28,7 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
       className="fixed inset-0 z-50 bg-black flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-rose-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
@@ -36,14 +36,14 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-7xl md:text-9xl font-serif bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 bg-clip-text text-transparent mb-12 tracking-wide"
+          className="text-7xl md:text-9xl font-serif bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 bg-clip-text text-transparent mb-12 tracking-wide"
         >
           {t.hero.title}
         </motion.h1>
 
-        <div className="w-80 h-2 bg-white/5 rounded-full overflow-hidden mx-auto border border-emerald-500/20">
+        <div className="w-80 h-2 bg-white/5 rounded-full overflow-hidden mx-auto border border-purple-500/20">
           <motion.div
-            className="h-full bg-gradient-to-r from-emerald-500 via-emerald-400 to-emerald-600"
+            className="h-full bg-gradient-to-r from-purple-500 via-purple-400 to-purple-600"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.3 }}

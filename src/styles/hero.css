@@ -1,5 +1,31 @@
 /* Hero — editorial atmosphere & depth */
 
+/* CSS-driven animations (replaces JS Framer Motion infinite loops for perf) */
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes hero-scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(10px); }
+}
+
+.hero-float-orb {
+  animation: hero-float 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-scroll-dot {
+  animation: hero-scroll-bounce 1.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Containment for expensive blur/grain layers */
+.hero-grain {
+  contain: strict;
+}
+
 .hero-section {
   --hero-overlay-light: linear-gradient(
     135deg,
@@ -55,7 +81,8 @@
 .hero-stat-card {
   background: rgba(255, 255, 255, 0.55);
   border: 1px solid rgba(124, 58, 237, 0.12);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px);
+  will-change: transform;
 }
 
 .dark .hero-section .hero-stat-card {
@@ -67,6 +94,7 @@
   box-shadow:
     0 25px 50px -12px rgba(76, 29, 149, 0.25),
     0 0 0 1px rgba(124, 58, 237, 0.08);
+  will-change: transform;
 }
 
 .dark .hero-section .hero-image-frame {
@@ -78,7 +106,7 @@
 .hero-float-badge {
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(124, 58, 237, 0.15);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
 }
 
 .dark .hero-section .hero-float-badge {

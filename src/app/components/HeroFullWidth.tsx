@@ -42,7 +42,8 @@ export function HeroFullWidth() {
         aria-hidden
         className="hero-bg-image absolute inset-0 h-full w-full scale-105"
         loading="eager"
-        decoding="async"
+        decoding="sync"
+        fetchPriority="high"
       />
 
       <div className="hero-overlay absolute inset-0" aria-hidden />
@@ -62,10 +63,12 @@ export function HeroFullWidth() {
 
       <div
         className="pointer-events-none absolute -top-32 right-0 h-96 w-96 rounded-full bg-violet-400/20 blur-3xl dark:bg-violet-500/15"
+        style={{ willChange: 'transform', contain: 'strict' }}
         aria-hidden
       />
       <div
         className="pointer-events-none absolute bottom-0 left-0 h-80 w-80 rounded-full bg-purple-300/25 blur-3xl dark:bg-indigo-600/20"
+        style={{ willChange: 'transform', contain: 'strict' }}
         aria-hidden
       />
 
@@ -201,7 +204,8 @@ export function HeroFullWidth() {
                   alt={t.hero.title}
                   className="h-full w-full object-cover object-center"
                   loading="eager"
-                  decoding="async"
+                  decoding="sync"
+                  fetchPriority="high"
                 />
                 <div
                   className="absolute inset-0 bg-gradient-to-t from-violet-950/50 via-transparent to-transparent dark:from-black/60"
@@ -267,10 +271,8 @@ export function HeroFullWidth() {
               />
             </div>
 
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className={`pointer-events-none absolute -z-10 h-24 w-24 rounded-full bg-gradient-to-br from-violet-400/40 to-purple-500/30 blur-2xl ${
+            <div
+              className={`hero-float-orb pointer-events-none absolute -z-10 h-24 w-24 rounded-full bg-gradient-to-br from-violet-400/40 to-purple-500/30 blur-2xl ${
                 isRTL ? "-left-6 bottom-12" : "-right-6 bottom-12"
               }`}
               aria-hidden
@@ -293,11 +295,7 @@ export function HeroFullWidth() {
           {t.nav.about}
         </span>
         <div className="flex h-10 w-6 justify-center rounded-full border-2 border-current">
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="mt-2 h-1.5 w-1.5 rounded-full bg-current"
-          />
+          <div className="hero-scroll-dot mt-2 h-1.5 w-1.5 rounded-full bg-current" />
         </div>
       </motion.button>
     </section>
